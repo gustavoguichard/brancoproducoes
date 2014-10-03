@@ -10,6 +10,6 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-$args = 'post_type=post&numberposts=-1&orderby=asc';
+$args = 'post_type=show&numberposts=-1&orderby=asc';
 $context['posts'] = Timber::get_posts($args);
 Timber::render(array('about-page.twig', 'page.twig'), $context);
