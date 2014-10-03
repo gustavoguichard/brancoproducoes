@@ -1,68 +1,68 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-title">
-		<div class="pe-container">
-			<!--<h1></h1>-->
-		</div>
-	</div>
+  <div class="page-title">
+    <div class="pe-container">
+      <!--<h1></h1>-->
+    </div>
+  </div>
 
-	<!-- gmaps-->
-	<div class="row-fluid pe-block">
-		<div class="span12 gmapWrap">
-			<div id="gmaps" class="gmap" data-latitude="-30.03465" data-longitude="-51.21766" data-title="Branco Produções" data-zoom="12" >
-				<div class="description">
-					<p>
-						<strong>Branco Produções</strong><br/>
-						Porto Alegre, RS
-					</p>
-				</div>
-			</div>
-		</div>
-	</div><!--end gmaps -->
+  <!-- gmaps-->
+  <div class="row-fluid pe-block">
+    <div class="span12 gmapWrap">
+      <div id="gmaps" class="gmap" data-latitude="-30.03465" data-longitude="-51.21766" data-title="Branco Produções" data-zoom="12" >
+        <div class="description">
+          <p>
+            <strong>Branco Produções</strong><br/>
+            Porto Alegre, RS
+          </p>
+        </div>
+      </div>
+    </div>
+  </div><!--end gmaps -->
 
-	<div class="pe-container">
-		<!--main content-->
-		<div class="row-fluid">
-			<section class="span8 pe-block">
-				<!--contact form-->
-				{{post.content}}
-			</section>
-			<!--sidebar-->
-			<div class="span4 sidebar">
-				<div class="inner-spacer-left-lrg">
-	<!--contact sidebar-->	
-	<!-- contact details widget -->
-	<div class="widget widget_contact">
-			<div class="email">
-				<span class="icon-mail"></span>
-				<p><a href="mailto:branco@brancoproducoes.com">branco@brancoproducoes.com</a>
-				</p>
-	            
-			</div>
-			<div class="phone">
-				<span class="icon-info-circled"></span>
-				<p>Informações ou compra de ingressos <br>+55 51 3231 4142</p>
-			</div>
-			<div class="hours">
-				<span class="icon-clock"></span>
-				<p class="hours">Seg/Sex: 9/12h &rarr; 14/18h</p>
-			</div>
-				</div>
-					<!--featured work widget-->
-					<div class="widget widget_featured">
-							<p><strong>Poro Alegre, RS</strong><br>
-										&rarr; BRASIL<br>
-							<!--TEXTO--></p>
-						<div class="project-item">
-							<a class="over-effect" href="{{site.url}}">
-								<img src="{{theme.link}}/img/blank/420x372.gif" class="peLazyLoading" data-original="{{theme.link}}/img/content/sidebar_work1.jpg" width="420" height="372" alt="alt text" />
-							</a>
-						</div>
-					</div>
-				<!--end sidebar-->
-				</div>
-			</div>
-		</div><!--end main content-->
-	</div>
+  <div class="pe-container">
+    <!--main content-->
+    <div class="row-fluid">
+      <section class="span8 pe-block">
+        <!--contact form-->
+        {{post.content}}
+      </section>
+      <!--sidebar-->
+      <div class="span4 sidebar">
+        <div class="inner-spacer-left-lrg">
+  <!--contact sidebar-->  
+  <!-- contact details widget -->
+  <div class="widget widget_contact">
+      <div class="email">
+        <span class="icon-mail"></span>
+        <p><a href="mailto:branco@brancoproducoes.com">branco@brancoproducoes.com</a>
+        </p>
+              
+      </div>
+      <div class="phone">
+        <span class="icon-info-circled"></span>
+        <p>Informações ou compra de ingressos <br>+55 51 3231 4142</p>
+      </div>
+      <div class="hours">
+        <span class="icon-clock"></span>
+        <p class="hours">Seg/Sex: 9/12h &rarr; 14/18h</p>
+      </div>
+        </div>
+          <!--featured work widget-->
+          <div class="widget widget_featured">
+              <p><strong>Poro Alegre, RS</strong><br>
+                    &rarr; BRASIL<br>
+              <!--TEXTO--></p>
+            <div class="project-item">
+              <a class="over-effect" href="{{site.url}}">
+                <img src="{{theme.link}}/img/blank/420x372.gif" class="peLazyLoading" data-original="{{theme.link}}/img/content/sidebar_work1.jpg" width="420" height="372" alt="alt text" />
+              </a>
+            </div>
+          </div>
+        <!--end sidebar-->
+        </div>
+      </div>
+    </div><!--end main content-->
+  </div>
 {% endblock %}

@@ -10,13 +10,13 @@
 <div class="pe-container">
   <div class="row-fluid">
     <section class="span8">
-    	{% for post in posts %}
+      {% for post in posts %}
         {% if post.post_type == 'post' %}
           {% include ['post-short.twig'] %}
         {% elseif post.post_type == 'show' %}
-      		{% include ['show-short.twig'] %}
+          {% include ['show-short.twig'] %}
         {% endif %}
-    	{% endfor %}
+      {% endfor %}
       <!--project pagination-->
       <div class="row-fluid project-pagination">
         {{function('wp_paginate')}}

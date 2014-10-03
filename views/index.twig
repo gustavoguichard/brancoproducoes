@@ -10,9 +10,9 @@
 <div class="pe-container">
   <div class="row-fluid">
     <section class="span8">
-    	{% for post in posts %}
-    		{% include ['post-short.twig'] %}
-    	{% endfor %}
+      {% for post in posts %}
+        {% include ['post-short.twig'] %}
+      {% endfor %}
       <!--project pagination-->
       <div class="row-fluid project-pagination">
         {{function('wp_paginate')}}

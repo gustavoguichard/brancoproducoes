@@ -8,9 +8,9 @@
 </div>
 <div class="pe-spacer size70"></div>
 <div class="pe-container">
-	{% for post in posts %}
-		{% include ['show.twig'] %}
-	{% endfor %}
+  {% for post in posts %}
+    {% include ['show.twig'] %}
+  {% endfor %}
   <!--project pagination-->
   <div class="row-fluid project-pagination">
     {{function('wp_paginate')}}

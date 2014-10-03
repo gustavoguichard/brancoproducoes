@@ -2,119 +2,119 @@
 
 {% block content %}
 
-	<div class="page-title">
-		<div class="pe-container">
-			<h1>{{post.title}}....</h1>
-		</div>
-	</div>
-	<div class="pe-spacer size70"></div>
-	<div class="pe-container">
-		<!--block 1-->
-		<div class="row-fluid pe-block">			
-			<section class="row-fluid">
-				<div class="span6">
-					<div class="alignleft" style="width:200px">
-						<a href="#"><img src="{{theme.link}}/img/blank/268x237.gif" class="peLazyLoading" data-original="{{theme.link}}/img/content/feat_work2.jpg" width="268" height="237" alt="alt text" /></a>
-					</div>
-					{{post.get_field('about_first_text')}}
-					<div class="divider dotted"></div>
-				</div>
-				<div class="span6">
-					{{post.get_field('about_second_text')}}
-					<div class="divider dotted"></div>
-				</div>
-			</section>
-			<section class="row-fluid">
-				<div class="span12"><h3>CARLOS BRANCO</h3></div>
-			</section>
-			<section class="row-fluid">
-				<div  class="span6">
-					<div class="testimonial">
-						<div class="speech"></div>
-						<div class="content">
-							<blockquote>
-								{{post.get_field('about_carlos_first_text')}}
-							</blockquote>
-						</div>
-					</div>
-				</div>	
-				<div  class="span6">	
-					<div class="testimonial">
-						<div class="speech"></div>
-						<div class="content">
-							<blockquote>
-								{{post.get_field('about_carlos_second_text')}}
-							</blockquote>
-						</div>
-					</div>
-				</div>	
-			</section>
+  <div class="page-title">
+    <div class="pe-container">
+      <h1>{{post.title}}....</h1>
+    </div>
+  </div>
+  <div class="pe-spacer size70"></div>
+  <div class="pe-container">
+    <!--block 1-->
+    <div class="row-fluid pe-block">      
       <section class="row-fluid">
-				<div class="span12"><h3>{{post.get_field('about_band_list_title')}}</h3></div>
-			</section>
+        <div class="span6">
+          <div class="alignleft" style="width:200px">
+            <a href="#"><img src="{{theme.link}}/img/blank/268x237.gif" class="peLazyLoading" data-original="{{theme.link}}/img/content/feat_work2.jpg" width="268" height="237" alt="alt text" /></a>
+          </div>
+          {{post.get_field('about_first_text')}}
+          <div class="divider dotted"></div>
+        </div>
+        <div class="span6">
+          {{post.get_field('about_second_text')}}
+          <div class="divider dotted"></div>
+        </div>
+      </section>
       <section class="row-fluid">
-				<div  class="span6">
-					<div class="testimonial">
-						<div class="content">
-							<blockquote>
-								<ul class="bands-list">
-									{% for band in bands %}
-				            <li class="band-name">{{band}}</li>&nbsp;
-				          {% endfor %}
-								</ul>
-							</blockquote>
-						</div>
-					</div>
-				</div>	
-				<div  class="span6">	
-					<div class="testimonial">
-						<div class="speech"></div>
-						<div class="content">
-							<blockquote>
-								<ul class="bands-list">
-									{% for band in bands2 %}
-				            <li class="band-name">{{band}}</li>&nbsp;
-				          {% endfor %}
-								</ul>
-							</blockquote>
-						</div>
-					</div>
-				</div>	
-			</section>
-		</div><!--end block 1-->
-		
-			<div class="row-fluid pe-block">			
-				<div class="row-fluid">
-					<div class="span3">
-						<h3>
-							Confira toda a nossa programação.
-							<span class="subtitle"><a href="{{fn('get_permalink_by_name', 'shows')}}">Agenda completa...</a></span>
-						</h3>
-					</div>	
-					<!--carousel controls-->
-					<div class="carousel-nav">
-						<a href="#" id="carouselPrev" class="prev-btn"><i class="icon-left-open"></i></a>
-						<a href="#" id="carouselNext" class="next-btn"><i class="icon-right-open"></i></a>
-					</div>
-				</div>
-				<!--carousel-->
-				<div class="row-fluid carouselBox" data-slidewidth="240">
-				{% for show in posts %}
-					<div>                    
-						<div>
-							<div class="project-item">
-								<a class="over-effect" href="{{show.permalink}}">
-									<img src="img/blank/420x372.gif" class="peLazyLoading" data-original="{{show.thumbnail.src('home_thumb')}}" width="420" height="372" alt="{{show.title}}" />
-								</a>
-								<h6><a href="{{show.permalink}}">{{show.title}}</a></h6>
-								<p>{{show.get_field('show_date_location')}}</p>
-							</div>
-						</div>  
-					</div>
-				{% endfor %}
-				</div><!-- end carousel -->
-			</div>
-		</div>
-	</div>
+        <div class="span12"><h3>CARLOS BRANCO</h3></div>
+      </section>
+      <section class="row-fluid">
+        <div  class="span6">
+          <div class="testimonial">
+            <div class="speech"></div>
+            <div class="content">
+              <blockquote>
+                {{post.get_field('about_carlos_first_text')}}
+              </blockquote>
+            </div>
+          </div>
+        </div>  
+        <div  class="span6">  
+          <div class="testimonial">
+            <div class="speech"></div>
+            <div class="content">
+              <blockquote>
+                {{post.get_field('about_carlos_second_text')}}
+              </blockquote>
+            </div>
+          </div>
+        </div>  
+      </section>
+      <section class="row-fluid">
+        <div class="span12"><h3>{{post.get_field('about_band_list_title')}}</h3></div>
+      </section>
+      <section class="row-fluid">
+        <div  class="span6">
+          <div class="testimonial">
+            <div class="content">
+              <blockquote>
+                <ul class="bands-list">
+                  {% for band in bands %}
+                    <li class="band-name">{{band}}</li>&nbsp;
+                  {% endfor %}
+                </ul>
+              </blockquote>
+            </div>
+          </div>
+        </div>  
+        <div  class="span6">  
+          <div class="testimonial">
+            <div class="speech"></div>
+            <div class="content">
+              <blockquote>
+                <ul class="bands-list">
+                  {% for band in bands2 %}
+                    <li class="band-name">{{band}}</li>&nbsp;
+                  {% endfor %}
+                </ul>
+              </blockquote>
+            </div>
+          </div>
+        </div>  
+      </section>
+    </div><!--end block 1-->
+    
+      <div class="row-fluid pe-block">      
+        <div class="row-fluid">
+          <div class="span3">
+            <h3>
+              Confira toda a nossa programação.
+              <span class="subtitle"><a href="{{fn('get_permalink_by_name', 'shows')}}">Agenda completa...</a></span>
+            </h3>
+          </div>  
+          <!--carousel controls-->
+          <div class="carousel-nav">
+            <a href="#" id="carouselPrev" class="prev-btn"><i class="icon-left-open"></i></a>
+            <a href="#" id="carouselNext" class="next-btn"><i class="icon-right-open"></i></a>
+          </div>
+        </div>
+        <!--carousel-->
+        <div class="row-fluid carouselBox" data-slidewidth="240">
+        {% for show in posts %}
+          <div>                    
+            <div>
+              <div class="project-item">
+                <a class="over-effect" href="{{show.permalink}}">
+                  <img src="img/blank/420x372.gif" class="peLazyLoading" data-original="{{show.thumbnail.src('home_thumb')}}" width="420" height="372" alt="{{show.title}}" />
+                </a>
+                <h6><a href="{{show.permalink}}">{{show.title}}</a></h6>
+                <p>{{show.get_field('show_date_location')}}</p>
+              </div>
+            </div>  
+          </div>
+        {% endfor %}
+        </div><!-- end carousel -->
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
