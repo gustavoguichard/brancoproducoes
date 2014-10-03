@@ -1,0 +1,17 @@
+<!--project item-->
+<div class="row-fluid project-single-col show show-{{post.post_type}}" id="show-{{post.ID}}">
+	{% block content %}
+    <section class="span8 media">
+      <a class="over-effect" href="{{post.permalink}}">
+        <img src="{{theme.link}}/img/blank/620x349.gif" class="peLazyLoading" data-original="{{post.thumbnail.src('shows_thumb')}}" width="620" height="349" alt="{{post.title}}" />
+      </a>
+    </section>
+    <section class="span4 info">
+      <div class="inner-spacer-left-lrg">
+        <h3><a href="{{post.permalink}}">{{post.title}}</a></h3>
+        <p>{{post.get_preview(40, false, '')}}</p>
+        <a href="{{post.permalink}}" class="read-more">{{post.get_field('show_date_location')}} +</a>
+      </div>
+    </section>
+	{% endblock %}
+</div><!--end project item-->

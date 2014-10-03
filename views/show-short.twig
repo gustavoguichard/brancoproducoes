@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="post post-{{post.post_type}}" id="post-{{post.ID}}">
+      {% block content %}
+        <!-- Post Title -->
+        <div class="row-fluid">
+          <div class="span12 post-title">
+            <h1>Show: <a href="{{post.permalink}}">{{post.title}}</a></h1>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12  post-image">
+            <a class="over-effect" href="{{post.permalink}}">
+              <img src="{{theme.link}}/img/blank/620x349.gif" class="peLazyLoading" data-original="{{post.thumbnail.src('shows_thumb')}}" width="620" height="349" alt="{{post.title}}" />
+            </a>
+          </div>
+        </div>
+        <!-- Post content -->
+        <div class="row-fluid">
+          <div class="span12">
+            {{post.content}}
+            <a href="{{post.permalink}}" class="read-more">{{post.get_field('show_date_location')}} +</a>
+          </div>
+        </div>
+    	{% endblock %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="page-title">
+  <div class="pe-container">
+    <h1>shows</h1>
+  </div>
+</div>
+<div class="pe-spacer size70"></div>
+<div class="pe-container">
+	{% for post in posts %}
+		{% include ['show.twig'] %}
+	{% endfor %}
+  <!--project pagination-->
+  <div class="row-fluid project-pagination">
+    {{function('wp_paginate')}}
+  </div>
+</div>
+{% endblock %}

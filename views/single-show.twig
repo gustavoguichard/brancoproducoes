@@ -1,0 +1,74 @@
+{% extends "base.twig" %}
+{% block content %}
+	<div class="page-title">
+		<div class="pe-container">
+			<h1>Apresenta</h1>
+		</div>
+	</div>
+	<div class="pe-spacer size70"></div>
+	<div class="pe-container">
+		<!--project content-->
+		<div class="row-fluid project pe-block post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="span12 media">
+				<img src="{{theme.link}}/img/blank/940x460.gif" class="peLazyLoading" data-original="{{post.thumbnail.src('show_main_thumb')}}" width="940" height="460" alt="Imagem do show" />
+			</div>
+			<div class="row-fluid">	
+				<section class="span8 project-description">
+					<p class="intro">{{post.title}}</p>
+					{{post.content}}
+				</section>
+				<section class="span4 project-data">
+					<div class="inner-spacer-left-lrg">
+						<h6>{{post.get_field('show_location')}}</h6>
+						<span class="line-sml"></span>
+						<div class="row-fluid">
+							<div class="data1">
+								<span>Quando?</span>
+								<span>Ingressos:</span>
+							</div>
+							<div class="data2">
+								<span>{{post.get_field('show_date')}}</span>
+								<span class="show-tickets">{{post.get_field('show_tickets')}}</span>
+							</div>
+						</div>						
+					</div>
+				</section>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="divider dotted"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid pe-block">			
+			<div class="row-fluid">
+				<div class="span3">
+					<h3>Outros shows<span class="subtitle">Muito mais música para você.</span></h3>
+				</div>	
+				<!--carousel controls-->
+				<div class="carousel-nav">
+					<a href="#" id="carouselPrev" class="prev-btn"><i class="icon-left-open"></i></a>
+					<a href="#" id="carouselNext" class="next-btn"><i class="icon-right-open"></i></a>
+				</div>
+			</div>
+			<!--carousel-->
+			<div class="row-fluid carouselBox" data-slidewidth="240">
+			{% for show in posts %}
+				{% if show.id != post.id %}
+					<div>                    
+						<div>
+							<div class="project-item">
+								<a class="over-effect" href="{{show.permalink}}">
+									<img src="img/blank/420x372.gif" class="peLazyLoading" data-original="{{show.thumbnail.src('home_thumb')}}" width="420" height="372" alt="{{show.title}}" />
+								</a>
+								<h6><a href="{{show.permalink}}">{{show.title}}</a></h6>
+								<p>{{show.get_field('show_date_location')}}</p>
+							</div>
+						</div>  
+					</div>
+				{% endif %}
+			{% endfor %}
+			</div><!-- end carousel -->
+		</div>
+	</div>
+{% endblock %}

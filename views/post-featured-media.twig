@@ -1,0 +1,23 @@
+{% if post.get_field('featured_media') == "Imagem" %}
+
+  <a href="{{post.permalink}}">
+    <img src="{{theme.link}}/img/blank/620x349.gif" class="peLazyLoading" data-original="{{post.thumbnail.src('shows_thumb')}}" width="620" height="349" alt="{{post.title}}" />
+  </a>
+
+{% elseif post.get_field('featured_media') == "Slider" %}
+
+  <div class="pe-block nomargin peSlider peVolo" data-autopause="enabled" data-plugin="peVario" data-transition="random">
+    {% for i in 1..5 %}
+      {% if post.get_field("slider_image_#{i}") %}
+      <div data-delay="7" {% if i == 1 %}class="visible"{% endif %}>
+        <img src="{{theme.link}}/img/blank/620x349.gif" class="peLazyLoading" data-original="{{TimberImage(post.get_field("slider_image_#{i}")).src}}" width="620" height="349" alt="alt text" />
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% elseif post.get_field('featured_media') == "Video" %}
+
+  {{fn('wp_oembed_get', post.get_field('post_video_url'), {'width':620})}}
+
+{% endif %}

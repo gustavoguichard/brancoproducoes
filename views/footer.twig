@@ -1,0 +1,53 @@
+<div class="pe-spacer size100"></div>
+<div class="footer">
+  <!--footer-->
+  <footer class="pe-container">
+    <div class="row-fluid">
+      <!--footer info-->
+      <div class="span3 widget widget_info">
+         <div class="logo-wrap">
+          <img class="logo-foot" src="{{theme.link}}/img/content/logo_head.png" alt="logo"/>
+         </div>
+         <span class="phone">+55 51 3231 4142</span>
+         <a href="mailto:branco@brancoproducoes.com">branco@brancoproducoes.com</a>
+      </div>
+      <!--end footer info-->
+      <!--links widget-->
+      <div class="span3 widget widget_links">
+        <ul>
+          {% for item in menu.items %}
+            <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+              <a href="{{item.link}}">{{item.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="span3 widget"></div>
+      <!--newsletter widget-->
+      <div class="span3 widget widget_newsletter">
+        <h3>para receber + informações</h3>
+        {% filter shortcodes %}
+          [contact-form-7 id="170" title="Newsletter"]
+        {% endfilter %}
+      </div>            
+    </div>      
+  </footer><!--end footer / container-->
+  <section class="foot-lower">
+    <div class="pe-container">
+      <div class="row-fluid ">
+        <div class="span12">
+          <div class="span6 copyright">
+            <span>&copy; Branco Produções | Tel 55 51 3231 4142</span>
+          </div>          
+          <div class="span6">
+            <span class="pull-right">
+              <!-- <a href="http://sambaestudio.com.br" target="_blank"><img src="{{theme.link}}/img/icon_se.png" alt="Samba Estúdio" /></a> -->
+              <a href="http://sambaestudio.com.br" target="_blank">samba estúdio</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Copyright {{"now"|date('Y')}} -->

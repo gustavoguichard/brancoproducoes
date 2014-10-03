@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="page-title">
+  <div class="pe-container">
+    <h1>&larr; <a href="{{site.link}}/blog">BLOG</a></h1>
+  </div>
+</div>
+<div class="pe-spacer size70"></div>
+<div class="pe-container">
+  <div class="row-fluid">
+    <section class="span8">
+  		{% include ['post.twig'] %}
+    </section>
+    <div class="span4 sidebar">
+      {% include ['sidebar.twig'] %}
+    </div>
+  </div>
+</div>
+{% endblock %}

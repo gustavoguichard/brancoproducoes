@@ -1,0 +1,82 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="post post-{{post.post_type}}" id="post-{{post.ID}}">
+      {% block content %}
+        <!-- Post Title -->
+        <div class="row-fluid">
+          <div class="span12 post-title">
+            <h1>{{post.title}}</h1>
+          </div>
+        </div>
+        <!-- Post Meta -->
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="comments">
+              <a href="" title="comments">{{post.get_field('show_date_short')}}</a>
+            </div>
+            <div class="post-meta">
+              <span class="user">postado por {{post.author.name}}</span>
+              <span class="date">{{post.display_date}}</span>
+            </div>
+          </div>
+        </div>
+        {% if post.get_field('featured_media') != "Nenhum" %}
+        <!-- Post featured Media -->
+        <div class="row-fluid">
+          <div class="span12  post-image">
+            {% include ['post-featured-media.twig'] %}
+          </div>
+        </div>
+        {% endif %}
+        <!-- Post content -->
+        <div class="row-fluid">
+          <div class="span12">
+            {% if post.get_field('intro_text') %}
+              <p class="intro">{{post.get_field('intro_text')}}</p>
+            {% endif %}
+            {{post.content}}
+          </div>
+        </div>
+        <div class="widget widget_tabs">
+          <h3>+ informações</h3>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tabpethemewidgettabs-3-1" data-toggle="tab">Quando?</a></li>
+            <li class=""><a href="#tabpethemewidgettabs-3-2" data-toggle="tab">{{post.get_field('show_place_title')}}</a></li>
+            <li class=""><a href="#tabpethemewidgettabs-3-3" data-toggle="tab">Ingressos</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tabpethemewidgettabs-3-1">
+              <p>{{post.get_field('show_date_info')}}</p>
+            </div>
+            <div class="tab-pane " id="tabpethemewidgettabs-3-2">
+              <p>{{post.get_field('show_place_desc')}}</p>
+            </div>
+            <div class="tab-pane " id="tabpethemewidgettabs-3-3">
+              <p>{{post.get_field('show_tickets_info')}}</p>
+            </div>
+          </div>
+        </div>
+        {% if post.get_field('show_featured_info') %}
+          <div class="widget widget_text">
+            <h3>Informação de destaque para o show</h3>
+            {{post.get_field('show_featured_info')}}
+          </div>
+        {% endif %}
+        <div class="row-fluid">
+          <div class="span12">
+             <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  var disqus_shortname = 'agendabrancoprodues'; // required: replace example with your forum shortname
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        </div>
+    	{% endblock %}
+    </div>
+  </div>
+</div>
